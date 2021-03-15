@@ -1,0 +1,734 @@
+<!--#include virtual="includes/htmlstart.shtml" -->
+<!--#include virtual="includes/headstart.shtml" -->
+<!--#include virtual="includes/meta.shtml" -->
+<!--#include virtual="includes/title.shtml" -->
+<link rel="stylesheet" href="styles/css/normalise.css">
+<link rel="stylesheet" href="styles/css/variables.css">
+<link rel="stylesheet" href="styles/css/fonts.css">
+
+<link rel="stylesheet" href="styles/css/animate.css">
+<link rel="stylesheet" href="styles/css/active.css" />
+
+<style>
+:root {
+  --opacity: 1;
+  --display: block;
+  --visibility: hidden;
+}
+
+body, html {
+  background-color: #333;
+}
+
+* {
+  font-family: "Monoid";
+
+}
+#main_section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+#left_col {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  height: 100vh;
+  background-color: #ccc;
+}
+
+#right_col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75%;
+  height: 100vh;
+}
+
+  .egg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 150px;
+    height: 200px;
+    clip-path: url(#myClip);
+    position: relative;
+    margin: 2rem;
+  }
+
+
+  .egg {
+    color: white;
+  }
+
+  .Irish {
+    background-color: green;
+background-image: linear-gradient(90deg, transparent 50%,
+  rgba(255,0,100,.5) 50%);
+  }
+
+  .Norwegian {
+    background-color: #765aa6;
+  }
+
+  .Lithuanian {
+    background-color: green;
+background-image: linear-gradient(90deg, transparent 50%,
+  rgba(54,200,23,.5) 50%);
+  }
+
+  .Turkish {
+    background-color: #ffcc00;
+  }
+
+  .Polish {
+    background-color: green;
+background-image: linear-gradient(90deg, transparent 50%,
+  rgba(0,100,100,.5) 50%);
+  }
+
+  .Copenhagen {
+      background-color: #ccc;
+  }
+
+  .Oslo {
+      background-color: #ddd;
+  }
+
+  .Stavanger {
+      background-color: #333;
+  }
+
+  .Bergen {
+      background-color: #ffcc00;
+  }
+
+  .Trondheim {
+      background-color: #999;
+  }
+
+  .UX {
+    background-color: #fee7bc;
+  }
+
+  .UI {
+    background-color: #515e8c;
+  }
+
+  .Frontend {
+    background-color: #ffc64a;
+  }
+
+  .Backend {
+    background-color: #b460a6;
+  }
+
+  .Prototyping {
+    background-color: #ffffff;
+  }
+
+  .DesignSystems {
+    background-image: linear-gradient(45deg, #515e8c 16.67%, #ffc64a 16.67%, #ffc64a 33.33%, #b460a6 33.33%, #b460a6 50%, #515e8c 50%, #515e8c 66.67%, #ffc64a 66.67%, #ffc64a 83.33%, #b460a6 83.33%, #b460a6 100%);background-size: 84.85px 84.85px;
+  }
+
+  .Drawing {
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+  }
+
+  .Running {
+    background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+  }
+
+  .egg_section {
+    width: 100%;
+    height: 12.5%;
+  }
+
+  /*Stripes*/
+  .Backend, .Frontend, .UI, .UX, .Prototyping, .DesignSystems, .Drawing, .Running {
+    flex: 1;
+    width: 100%;
+  }
+
+  /* Mask */
+  .st0 {
+    fill:none;
+    stroke:#000000;
+    stroke-width: 1px;
+    stroke-miterlimit:10;
+  }
+
+  .cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+  }
+
+
+  .stripe {
+    top: 0;
+    left: 0;
+    opacity: var(--opacity);
+    transition: opacity .25s ease-in-out;
+  }
+
+  	div:hover > .stripe {
+      opacity: var(--opacity);
+    }
+
+    #thescore {
+      color: #fff;
+      font-size: 3em;
+    }
+
+    .name {
+      position: absolute;
+      z-index: 2000;
+
+      color: #fff;
+    }
+
+
+    #eggcup {
+    }
+
+    #radioswrap {
+      background-color:#ccc;
+      border: solid 1px hotpink;
+      visibility: var(--visibility);
+    }
+
+    #countdown {
+      color: #fff;
+    }
+
+    #cover {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #000;
+    }
+
+    .key {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      display: flex;
+      flex: 0 0 auto;
+      margin-right: 1rem;
+    }
+
+    .keywrap {
+      width: 300px;
+      display: flex;
+
+      align-items: center;
+    }
+
+    p {
+      color: #fff;
+    }
+
+</style>
+
+<html>
+
+
+
+
+<div id="cover"><button id="startEgghunt">Start the quiz</button></div>
+
+
+
+
+<section id="main_section">
+  <svg width="0" height="0">
+    <defs>
+      <filter id="shadow">
+        <feDropShadow dx="2" dy="4" stdDeviation="2"/>
+      </filter>
+      <clipPath id="myClip">
+        <path class="st0" d="M150,122.7c0,42.6-33.6,77.1-75,77.1S0,165.3,0,122.7S33.6-0.2,75-0.2S150,80.1,150,122.7z"/></path>
+      </clipPath>
+    </defs>
+  </svg>
+
+
+  <div id="left_col">
+    <div id="mapkey"></div>
+  </div>
+  <div id="right_col">
+    <p id="thescore"><span id="score">0</span></p>
+    <div id="eggcup"></div>
+    <div id="addeggwrap"><button id="addegg">Add a random egg</button></div>
+    <div id="radioswrap"><form></form></div>
+  </div>
+</section>
+
+
+<script>
+
+
+let eggs = {
+
+
+  "eggheads": [
+    {
+      "name": "Kevin",
+      "eggyears": 8,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Irish",
+      "office": "Oslo",
+      "powers": [
+        "UX",
+        "UI",
+        "Prototyping",
+        "Drawing",
+        "Running"
+      ]
+    },
+    {
+      "name": "Andrius",
+      "eggyears": 2,
+      "mugshot": "images/eggs/andriusgrabauskas.jpg",
+      "nationality": "Lithuanian",
+      "office": "Copenhagen",
+      "powers": [
+        "UX",
+        "UI"
+      ]
+    },
+    {
+      "name": "Paddy",
+      "eggyears": 2,
+      "mugshot": "images/eggs/andriusgrabauskas.jpg",
+      "nationality": "Lithuanian",
+      "office": "Copenhagen",
+      "powers": [
+        "UX",
+        "UI"
+      ]
+    },
+    {
+      "name": "Colm",
+      "eggyears": 2,
+      "mugshot": "images/eggs/andriusgrabauskas.jpg",
+      "nationality": "Lithuanian",
+      "office": "Copenhagen",
+      "powers": [
+        "UX",
+        "UI"
+      ]
+    },
+    {
+      "name": "Billy",
+      "eggyears": 8,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Polish",
+      "office": "Oslo",
+      "powers": [
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 8,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UX",
+        "UI"
+      ]
+    },
+    {
+      "name": "Alexander",
+      "eggyears": 3,
+      "mugshot": "images/eggs/alexandervanvik.jpg",
+      "nationality": "Norwegian",
+      "office": "Stavanger",
+      "powers": [
+        "DesignSystems",
+        "UX",
+        "UI",
+        "Frontend",
+        "Backend"
+      ]
+    }]
+};
+
+
+/*
+  SET UP VARIABLES and ARRAYS
+*/
+
+            let main_section = document.getElementById('main_section');
+            let all_eggs = [];
+            let all_classes = [];
+            let all_names = [];
+            let unique_powers = [];
+            let cover_egg = "<svg version='1.1' x='0px' y='0px' viewBox='0 0 150 200' style='enable-background:new 0 0 150 200;' xml:space='preserve'><defs><filter id='inner-glow'><feFlood flood-color='black'/><feComposite in2='SourceAlpha' operator='out'/><feGaussianBlur stdDeviation='5' result='blur'/><feComposite operator='atop' in2='SourceGraphic'/></filter></defs><path class='st0' d='M150,122.7c0,42.6-33.6,77.1-75,77.1S0,165.3,0,122.7S33.6-0.2,75-0.2S150,80.1,150,122.7z'/></svg>";
+            let addegg = document.getElementById('addegg');
+            let eggcup = document.getElementById('eggcup');
+            <div id="eggcup"></div>
+            let radioswrap = document.getElementById('radioswrap');
+            let countdownwrap = document.getElementById('countdownwrap');
+            let mapkey = document.getElementById('mapkey');
+            let right_col = document.getElementById('right_col');
+            let left_col = document.getElementById('left_col');
+            var form = document.querySelector("form");
+            let radios = [];
+            let root = document.documentElement;
+            let startEgghunt = document.getElementById('startEgghunt');
+            let cover = document.getElementById('cover');
+            let theEnd = document.createElement('h1');
+            theEnd.innerHTML = "<a href=''>ITS OVER BABY! - Go AGAIN</a>";
+            // A random egg
+            let randyegg;
+            let score = 0;
+            let scoredisplay = document.getElementById('score');
+
+
+
+/*
+___________________________________________
+  Loop through all the eggs
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+*/
+
+
+let god = function(){
+
+            for(var i = 0; i < eggs.eggheads.length; i++){
+              let name = eggs.eggheads[i].name;
+              let eggyears = eggs.eggheads[i].eggyears;
+              let nationality = eggs.eggheads[i].nationality;
+              let office = eggs.eggheads[i].office;
+              let mugshot = eggs.eggheads[i].mugshot;
+              let powers = eggs.eggheads[i].powers;
+              all_names.push(name);
+
+// For each egg create a div
+              let an_egg = document.createElement('div');
+
+// for each div add a class:
+              an_egg.classList.add('egg');
+              an_egg.classList.add(name);
+              an_egg.classList.add(nationality);
+              an_egg.classList.add(office);
+
+// Add name to eggs
+              an_egg.innerHTML = "<p class='name'>" + name + "</p>";
+              an_egg.style.setProperty('background-image', "url(" + mugshot + ")");
+              an_egg.style.setProperty('background-position', 'center');
+
+// Add all the eggs to an array
+
+              all_eggs.push(an_egg);
+
+
+              let all_powers = eggs.eggheads[i].powers;
+              for(var k = 0; k < all_powers.length; k++){
+                unique_powers.push(all_powers[k]);
+              };
+
+
+              an_egg.innerHTML += '<div class="egg_section stripe' + ' ' + nationality + '"></div>';
+              an_egg.innerHTML += '<div class="egg_section stripe' + ' ' + office + '"></div>';
+
+  // Powers -  add them as classes
+
+              for(var j = 0; j < powers.length; j++){
+                // Add power balls
+                let an_egg_power = document.createElement('div');
+                an_egg.append(an_egg_power);
+                an_egg_power.classList.add(powers[j]);
+                an_egg_power.classList.add('stripe');
+              }
+
+// Add a top container
+                let an_egg_cover = document.createElement('div');
+                an_egg_cover.classList.add('cover');
+                an_egg_cover.innerHTML = cover_egg;
+                an_egg.append(an_egg_cover);
+
+
+                /*
+                ___________________________________________
+                  Create egg class
+                ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+                */
+
+}
+
+}
+
+
+
+
+
+god();
+
+
+/*
+___________________________________________
+  END Looping through all the eggs
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+*/
+
+/*
+___________________________________________
+  Choose a RANDOM EGG from the eggs array
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+*/
+            var createRadios = function(){
+              // Create the radios:
+              // Make a radio button and label
+              //radios.length = 0;
+              for(var i = 0; i < eggs.eggheads.length; i++){
+                let radioInput = document.createElement('input');
+                let name = eggs.eggheads[i].name;
+                radioInput.setAttribute('type', 'radio');
+                radioInput.setAttribute('name', 'radio');
+                radioInput.setAttribute('value', name);
+                radioInput.classList.add('radiobutton');
+                radios.push(radioInput);
+                form.append(radios[i]);
+              
+              }
+            }
+
+
+            createRadios();
+            //console.log(radios.length);
+
+            function randomEgg() {
+
+              randyegg = all_eggs[Math.floor(Math.random() * all_eggs.length)];
+              if(document.querySelector('.egg')){
+              const elem = document.querySelector('.egg');
+              elem.parentNode.removeChild(elem);
+              eggcup.append(randyegg);
+
+              } else if (!document.querySelector('.egg')){
+                eggcup.append(randyegg);
+              }
+              // Opacity value is to reveal the pic
+              root.style.setProperty('--opacity', '1');
+              // Hide the button
+              addegg.style.visibility = "hidden";
+              //Show the dropdown
+              root.style.setProperty('--visibility' , 'visible');
+              //addRadios();
+              //createRadios();
+            }
+
+
+
+/*
+
+
+
+/*
+___________________________________________
+  Check the answers and do stuff
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+*/
+
+
+
+
+for (var i = 0; i < radios.length; i++){
+  radios[i].addEventListener('click', function(){
+
+    let selectedValue;
+    for (const rb of radios) {
+        if (rb.checked) {
+            selectedValue = rb.value;
+            break;
+        }
+    }
+
+
+
+
+  // IF CORRECT:
+    if(randyegg.classList.contains(selectedValue)){
+      console.log('correct!');
+
+      score += 1;
+      // Remove the egg from the main array so it doesnt appear again
+      // Find the correct egg
+      var index = all_eggs.indexOf(randyegg);
+
+      // If he's in the array, remove him
+      if (index > -1) {
+        eggs.eggheads.splice(index, 1);
+      }
+      console.log(eggs.eggheads);
+      console.log("new length:", eggs.eggheads.length);
+      // Reveal the pic:
+      root.style.setProperty('--opacity', '0.25');
+      //Show the button
+      addegg.style.visibility = "visible";
+      // Hide the dropdown
+      root.style.setProperty('--visibility' , 'hidden');
+
+      // if the array length == 1 the hide the add egg button
+      if(all_eggs.length <= 0){
+          addegg.style.visibility = "hidden";
+          // hide the time and display the message
+          // tell them its over
+          right_col.append(theEnd);
+          //countdownwrap.parentNode.removeChild(countdownwrap);
+      }
+
+  // IF WRONG:
+    } else {
+      console.log('wrong!');
+      score -= 1;
+      // play sound
+    };
+
+    scoredisplay.textContent = score;
+    // Say well done! and remove this egg from the array
+
+
+  })
+}
+
+/*
+let chosen = radios[i].checked;
+console.log(chosen);
+if(chosen.checked){
+  var value = chosen;
+
+// IF CORRECT:
+  if(randyegg.classList.contains(value)){
+
+    radioswrap.innerHTML = ' ';
+    score += 1;
+    // Remove the egg from the main array so it doesnt appear again
+    // Find the correct egg
+    var index = all_eggs.indexOf(randyegg);
+    // If he's in the array, remove him
+    if (index > -1) {
+      all_eggs.splice(index, 1);
+    }
+    // Reveal the pic:
+    root.style.setProperty('--opacity', '0.25');
+    //Show the button
+    addegg.style.visibility = "visible";
+    // Hide the dropdown
+    root.style.setProperty('--visibility' , 'hidden');
+
+    // if the array length == 1 the hide the add egg button
+    if(all_eggs.length <= 0){
+        addegg.style.visibility = "hidden";
+        // hide the time and display the message
+        // tell them its over
+        right_col.append(theEnd);
+        //countdownwrap.parentNode.removeChild(countdownwrap);
+    }
+
+// IF WRONG:
+  } else {
+    console.log('wrong!');
+    score -= 1;
+    // play sound
+  };
+
+  scoredisplay.textContent = score;
+  // Say well done! and remove this egg from the array
+
+}
+*/
+/*
+___________________________________________
+  Start the quiz:
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+*/
+
+
+              startEgghunt.addEventListener('click', function(){
+                // Hide the cover:
+                cover.parentNode.removeChild(cover);
+                //randomEgg();
+              });
+
+
+
+
+              addegg.addEventListener("click", function(){
+                  randomEgg();
+                  createRadios();
+                  console.log(eggs.eggheads);
+                  console.log(eggs.eggheads.length);
+              });
+
+/**Add all the classes to a classes array**/
+
+// Make a dropdown with all the all_names
+// Add event to dropdown > the selected one becomes myAnswer variables
+// If correct
+
+
+
+/*
+___________________________________________
+  Create the key explaining the colors
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+*/
+
+            var deduped = unique_powers.filter(function (power, index) {
+            	return unique_powers.indexOf(power) === index;
+            });
+
+            for (var i = 0; i < deduped.length; i++){
+              let keywrap = document.createElement('div');
+              let key = document.createElement('div');
+              let keyname = document.createElement('p');
+              keyname.textContent = deduped[i];
+              keywrap.classList.add('keywrap');
+              key.classList.add(deduped[i]);
+              key.classList.add('key');
+              keywrap.appendChild(key);
+              key.after(keyname);
+              mapkey.append(keywrap);
+            }
+
+/*
+___________________________________________
+  Generic event delegation (gmt)
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+*/
+            document.addEventListener('click', function (event) {
+
+            	if (event.target.matches('.radiobutton')) {
+            		//console.log('radio');
+            	}
+
+
+            }, false);
+
+
+            let removeMe = function(elem){
+              elem.remove();
+            }
+</script>
+
+
+</html>

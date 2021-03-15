@@ -1,0 +1,652 @@
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<!--#include virtual="includes/htmlstart.shtml" -->
+<!--#include virtual="includes/headstart.shtml" -->
+<!--#include virtual="includes/meta.shtml" -->
+<!--#include virtual="includes/title.shtml" -->
+<link rel="stylesheet" href="styles/css/normalise.css">
+<link rel="stylesheet" href="styles/css/variables.css">
+<link rel="stylesheet" href="styles/css/fonts.css">
+
+<link rel="stylesheet" href="styles/css/animate.css">
+<link rel="stylesheet" href="styles/css/active.css" />
+
+<style>
+:root {
+  --opacity: 1;
+  --display: block;
+  --visibility: hidden;
+}
+
+body, html {
+  background-color: #23211E;
+}
+
+* {
+  font-family: "Monoid";
+  font-size: 12px;;
+}
+
+
+  .egg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 264px;
+    height: 360px;
+    position: relative;
+    margin: 2rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    clip-path: url(#myClip);
+  }
+
+  /* Mask */
+  .st0 {
+    fill:none;
+    stroke-miterlimit:10;
+  }
+  
+  /* Gradient cover */
+  .cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+
+  }
+
+  .Irish {
+    background-color: green;
+background-image: linear-gradient(90deg, transparent 50%,
+  rgba(255,0,100,.5) 50%);
+  }
+
+  .Norwegian {
+    background-color: #765aa6;
+  }
+
+  .Lithuanian {
+    background-color: green;
+background-image: linear-gradient(90deg, transparent 50%,
+  rgba(54,200,23,.5) 50%);
+  }
+
+  .Turkish {
+    background-color: #ffcc00;
+  }
+
+  .Polish {
+    background-color: green;
+background-image: linear-gradient(90deg, transparent 50%,
+  rgba(0,100,100,.5) 50%);
+  }
+
+  .Copenhagen {
+      background-color: #ccc;
+  }
+
+  .Oslo {
+      background-color: #ddd;
+  }
+
+  .Stavanger {
+      background-color: #333;
+  }
+
+  .Bergen {
+      background-color: #ffcc00;
+  }
+
+  .Trondheim {
+      background-color: #999;
+  }
+
+  .UX {
+    background-color: #fee7bc;
+  }
+
+  .UI {
+    background-color: #515e8c;
+  }
+
+  .Frontend {
+    background-color: #ffc64a;
+  }
+
+  .Backend {
+    background-color: #b460a6;
+  }
+
+  .Prototyping {
+    background-color: #ffffff;
+  }
+
+  .DesignSystems {
+    background-image: linear-gradient(45deg, #515e8c 16.67%, #ffc64a 16.67%, #ffc64a 33.33%, #b460a6 33.33%, #b460a6 50%, #515e8c 50%, #515e8c 66.67%, #ffc64a 66.67%, #ffc64a 83.33%, #b460a6 83.33%, #b460a6 100%);background-size: 84.85px 84.85px;
+  }
+
+  .Drawing {
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+  }
+
+  .Running {
+    background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+  }
+
+  .egg_section {
+    width: 100%;
+    height: 12.5%;
+  }
+
+  /*Stripes*/
+  .Backend, .Frontend, .UI, .UX, .Prototyping, .DesignSystems, .Drawing, .Running {
+    flex: 1;
+    width: 100%;
+  }
+  .stripe {
+    top: 0;
+    left: 0;
+    opacity: var(--opacity);
+    transition: opacity .25s ease-in-out;
+  }
+
+  	div:hover > .stripe {
+      opacity: var(--opacity);
+    }
+
+
+
+#eggcup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.key {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      display: flex;
+      flex: 0 0 auto;
+      margin-right: 1rem;
+      color: #FFC64A;
+    }
+p {
+    color: #FFC64A;
+}
+    .keywrap {
+      width: 300px;
+      display: flex;
+      align-items: center;
+    }
+
+    #main_section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#left {
+    position: absolute;
+    left: 0;
+    z-index: 100;
+}
+#right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+#inputs {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
+    text-align: center;
+}
+
+#shadow {
+    height: 40px;
+    width: 160px;
+    border-radius: 50%;
+    margin: auto;
+}
+
+label {
+    margin: 2rem;
+    color: #FF7A5A;
+}
+
+.radiobutton {
+    visibility: hidden;
+}
+</style>
+
+<html>
+
+
+<svg width="0" height="0" viewBox="0 0 264 360" fill="none" stroke="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <filter id="shadow">
+        <feDropShadow dx="2" dy="4" stdDeviation="2"/>
+        </filter>
+        <clipPath id="myClip">
+    <path d="M263.5 227.647C263.5 300.469 204.624 359.5 132 359.5C59.3758 359.5 0.5 300.469 0.5 227.647C0.5 191.197 15.2462 134.362 39.1091 86.6359C51.0384 62.7773 65.2312 41.2257 80.9714 25.646C96.7151 10.0628 113.958 0.5 132 0.5C150.042 0.5 167.285 10.0628 183.029 25.646C198.769 41.2257 212.962 62.7773 224.891 86.6359C248.754 134.362 263.5 191.197 263.5 227.647Z" stroke="none"/>
+</clipPath>
+</defs>
+</svg>
+
+
+<section id="main_section">
+    <div id="left">
+        <div id="mapkey"></div>
+    </div>
+    <div id="right">
+        <p id="message">....</p>
+        <div id="eggcup"></div>
+        <div id="shadow"><img src="svg/shadow.svg" alt=""></div>
+        <div id="inputs">
+        <button id="addegg">Add a random egg</button>
+
+        </div>
+
+        <form action=""></form>
+    </div>
+    
+
+</section>
+
+
+
+<script>
+
+/*
+___________________________________________
+  Les Oeufs
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+*/
+
+let eggs = {
+
+
+  "eggheads": [
+    {
+      "name": "Kevin",
+      "eggyears": 8,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Irish",
+      "office": "Oslo",
+      "powers": [
+        "UX",
+        "UI",
+        "Prototyping",
+        "Drawing",
+        "Running"
+      ]
+    },
+    {
+      "name": "Andrius",
+      "eggyears": 2,
+      "mugshot": "images/eggs/andriusgrabauskas.jpg",
+      "nationality": "Lithuanian",
+      "office": "Oslo",
+      "powers": [
+        "UX",
+        "UI",
+        "Design"
+      ]
+    },
+    {
+      "name": "Adelin",
+      "eggyears": 2,
+      "mugshot": "images/eggs/AdelinGashi.jpg",
+      "nationality": "Kosovan",
+      "office": "Oslo",
+      "powers": [
+        "UX",
+        "UI",
+        "Arduino",
+        "ID",
+        "Service"
+      ]
+    },
+    {
+      "name": "Andreas",
+      "eggyears": 2,
+      "mugshot": "images/eggs/AndreasPetrov.jpg",
+      "nationality": "Norwegian",
+      "office": "Oslo",
+      "powers": [
+        "Frontend",
+        "React",
+        "Backend"
+      ]
+    },
+    {
+      "name": "Annie",
+      "eggyears": 8,
+      "mugshot": "images/eggs/AnnieFeddersenHjelmervik.jpg",
+      "nationality": "Norwegian",
+      "office": "Trondheim",
+      "powers": [
+        "UX",
+        "Cattle"
+      ]
+    },
+    {
+      "name": "Belma",
+      "eggyears": 8,
+      "mugshot": "images/eggs/BelmaNazecic.jpg",
+      "nationality": "Serbian",
+      "office": "Stavanger",
+      "powers": [
+        "UX",
+        "UI",
+        "Service"
+      ]
+    },
+    {
+      "name": "Alexander",
+      "eggyears": 3,
+      "mugshot": "images/eggs/alexandervanvik.jpg",
+      "nationality": "Norwegian",
+      "office": "Oslo",
+      "powers": [
+        "DesignSystems",
+        "UX",
+        "UI",
+        "Frontend",
+        "Backend"
+      ]
+    }]
+};
+
+/*
+___________________________________________
+  Setup
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+*/
+
+let root = document.documentElement;
+let all_eggs = [];
+let radios = [];
+let all_names = [];
+let unique_powers = [];
+let mapkey = document.getElementById('mapkey');
+let eggcup = document.getElementById('eggcup');
+let addegg = document.getElementById('addegg');
+let message = document.getElementById('message');
+
+let cover_egg = "<svg version='1.1' x='0px' y='0px' viewBox='0 0 264 360' style='enable-background:new 0 0 264 360; stroke: none;' xml:space='preserve'><defs><filter id='inner-glow'><feFlood flood-color='black'/><feComposite in2='SourceAlpha' operator='out'/><feGaussianBlur stdDeviation='5' result='blur'/><feComposite operator='atop' in2='SourceGraphic'/></filter></defs><path class='st0' d='M150,122.7c0,42.6-33.6,77.1-75,77.1S0,165.3,0,122.7S33.6-0.2,75-0.2S150,80.1,150,122.7z'/></svg>";
+let form = document.querySelector("form");
+form.style.display = "none";
+
+
+let randyegg;
+let randyindex;
+let radioindex;
+let selectedValue;
+
+/*
+___________________________________________
+  EGG class
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+*/
+
+class Egg {
+    constructor(name, eggyears, nationality, office, mugshot, powers){
+        this.name = name;
+        this.eggyears = eggyears;
+        this.nationality = nationality;
+        this.office = office;
+        this.mugshot = mugshot;
+        this.powers = powers;
+    }
+
+    display(name, nationality, office, mugshot, powers){
+
+
+
+        let eggshell = document.createElement('div');
+        eggshell.classList.add('egg');
+        eggshell.classList.add(name);
+        eggshell.classList.add(nationality);
+        eggshell.classList.add(office);
+        eggshell.classList.add(powers);
+        eggshell.style.backgroundImage = ("url(" + mugshot + ")");
+        eggshell.innerHTML += '<div class="egg_section stripe' + ' ' + office + '"></div>';
+        eggshell.innerHTML += '<div class="egg_section stripe' + ' ' + nationality + '"></div>';
+        //eggshell.innerHTML += name;
+
+        // Add a top container
+        let an_egg_cover = document.createElement('div');
+        an_egg_cover.classList.add('cover');
+        an_egg_cover.innerHTML = cover_egg;
+        eggshell.append(an_egg_cover);
+
+        for(var j = 0; j < powers.length; j++){
+            // Add power balls
+            let an_egg_power = document.createElement('div');
+            an_egg_power.classList.add(powers[j]);
+            an_egg_power.classList.add('stripe');
+            eggshell.append(an_egg_power);
+        }
+    
+
+        all_eggs.push(eggshell);
+    }
+}
+
+          
+
+
+
+
+/*
+___________________________________________
+  Loop through all the eggs
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+*/
+
+let god = function(){
+
+for(var i = 0; i < eggs.eggheads.length; i++){
+        let name = eggs.eggheads[i].name;
+        let eggyears = eggs.eggheads[i].eggyears;
+        let nationality = eggs.eggheads[i].nationality;
+        let office = eggs.eggheads[i].office;
+        let mugshot = eggs.eggheads[i].mugshot;
+        let powers = eggs.eggheads[i].powers;
+
+        const Eggster = new Egg(name, nationality, office, mugshot, powers);
+        Eggster.display(name, nationality, office, mugshot, powers);
+
+        // Create some radio buttons
+
+        let radioInput = document.createElement('input');
+        radioInput.setAttribute('type', 'radio');
+        radioInput.setAttribute('value', name);
+        radioInput.setAttribute('name', 'name');
+        radioInput.setAttribute('id', name);
+        radioInput.classList.add('radiobutton');
+
+
+        radios.push(radioInput);
+        form.append(radios[i]);
+        
+
+        let all_powers = powers;
+              for(var k = 0; k < all_powers.length; k++){
+                unique_powers.push(all_powers[k]);
+              };
+
+    }
+}
+
+
+console.log(unique_powers);
+
+god();
+
+var replies_negative = [
+    'Oh no!...you really are a bit shite!', 
+    'Ha!...no no no', 
+    'Are you kidding me?',
+    'Use the f...stripes',
+    'What?...LOOK AT THE STRIPES',
+    'Wrong!..heres a joke - what do cool chicks do to relax? Listen to their favourite albumen of course! ahahah'
+];
+
+var replies_postive = [
+    'YES!...you know your eggs!', 
+    'Nice one eggster!' 
+];
+
+for (var i = 0; i < radios.length; i++){
+
+    // Add the labels
+    let radioLabel = document.createElement('label');
+        //radioLabel.setAttribute('for', name);
+        radioLabel.htmlFor = radios[i].value;
+        radioLabel.innerHTML = radios[i].value;
+
+        radios[i].parentNode.insertBefore(radioLabel, radios[i]);
+        radioLabel.appendChild(radios[i]);
+
+        //radios[i].after(radioLabel);
+        //radioLabel.appendChild(radios[i]);
+
+            radios[i].addEventListener('click', function(){
+            let selectedValue;           
+            for (const rb of radios) {
+                if (rb.checked) {
+                    selectedValue = rb.value;                  
+                    break;
+                }
+            }
+
+            if (randyegg.classList.contains(selectedValue)){
+                shuffle(replies_postive);
+                message.textContent = replies_postive[0];
+                root.style.setProperty('--opacity', '0');
+                form.style.display = "none";
+                addegg.style.display = "block";
+            } else {
+                shuffle(replies_negative);
+                message.textContent = replies_negative[0];
+            }
+
+        });
+
+
+}
+
+
+/*
+___________________________________________
+  Generate the radio list
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+*/
+
+let egg = document.querySelectorAll
+/*
+___________________________________________
+  Get a random egg
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+*/
+
+function randomEgg() {
+        eggcup.innerHTML=" ";
+        randyegg = all_eggs[Math.floor(Math.random() * all_eggs.length)];
+        randyindex = all_eggs.indexOf(randyegg);
+        console.log("randyindex:", randyindex);
+        eggcup.append(randyegg);
+    
+}
+
+
+/*
+___________________________________________
+  Get a random egg
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+*/
+
+addegg.addEventListener("click", function(){
+        randomEgg();
+        root.style.setProperty('--opacity', '1');
+        addegg.style.display = "none";
+        form.style.display = "block";
+        message.textContent = " ";
+        // Clear the selected radio
+});
+
+
+/*
+___________________________________________
+  Create the key explaining the colors
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+*/
+
+var deduped = unique_powers.filter(function (power, index) {
+            	return unique_powers.indexOf(power) === index;
+            });
+
+            for (var i = 0; i < deduped.length; i++){
+              let keywrap = document.createElement('div');
+              let key = document.createElement('div');
+              let keyname = document.createElement('p');
+              keyname.textContent = deduped[i];
+              keywrap.classList.add('keywrap');
+              key.classList.add(deduped[i]);
+              key.classList.add('key');
+              keywrap.appendChild(key);
+              key.after(keyname);
+              mapkey.append(keywrap);
+            }
+
+
+            
+
+/**
+ * Randomly shuffle an array
+ * https://stackoverflow.com/a/2450976/1293256
+ * @param  {Array} array The array to shuffle
+ * @return {String}      The first item in the shuffled array
+ */
+var shuffle = function (array) {
+
+	var currentIndex = array.length;
+	var temporaryValue, randomIndex;
+
+	// While there remain elements to shuffle...
+	while (0 !== currentIndex) {
+		// Pick a remaining element...
+		randomIndex = Math.floor(Math.random() * currentIndex);
+		currentIndex -= 1;
+
+		// And swap it with the current element.
+		temporaryValue = array[currentIndex];
+		array[currentIndex] = array[randomIndex];
+		array[randomIndex] = temporaryValue;
+	}
+
+	return array;
+
+};
+
+</script>
+</html>

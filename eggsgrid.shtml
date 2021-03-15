@@ -1,0 +1,1071 @@
+<!--#include virtual="includes/htmlstart.shtml" -->
+<!--#include virtual="includes/headstart.shtml" -->
+<!--#include virtual="includes/meta.shtml" -->
+<!--#include virtual="includes/title.shtml" -->
+<link rel="stylesheet" href="styles/css/normalise.css">
+<link rel="stylesheet" href="styles/css/variables.css">
+<link rel="stylesheet" href="styles/css/fonts.css">
+
+<link rel="stylesheet" href="styles/css/animate.css">
+<link rel="stylesheet" href="styles/css/active.css" />
+
+<style>
+:root {
+  --opacity: 1;
+  --display: block;
+  --visibility: hidden;
+}
+
+body, html {
+  background-color: #333;
+}
+
+* {
+  font-family: "Monoid";
+
+}
+#main_section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#left_col {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  height: 100vh;
+  background-color: #ccc;
+}
+
+#right_col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75%;
+  height: 100vh;
+}
+
+  .egg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 150px;
+    height: 200px;
+    clip-path: url(#myClip);
+    position: relative;
+    margin: 2rem;
+  }
+
+
+  .egg {
+    color: white;
+  }
+
+  .Irish {
+    background-color: green;background-image: linear-gradient(90deg, transparent 50%,rgba(255,0,100,.5) 50%);
+  }
+
+  .Norwegian {
+    background-color: #765aa6;
+  }
+
+  .Lithuanian {
+    background-color: green;background-image: linear-gradient(90deg, transparent 50%,rgba(54,200,23,.5) 50%);
+  }
+
+  .Turkish {
+    background-color: #ffcc00;
+  }
+
+  .Polish {
+    background-color: green;
+background-image: linear-gradient(90deg, transparent 50%,
+  rgba(0,100,100,.5) 50%);
+  }
+
+  .Copenhagen {
+      background-color: #ccc;
+  }
+
+  .Oslo {
+      background-color: #ddd;
+  }
+
+  .Stavanger {
+      background-color: #333;
+  }
+
+  .Bergen {
+      background-color: #ffcc00;
+  }
+
+  .Trondheim {
+      background-color: #999;
+  }
+
+  .UX {
+    background-color: #fee7bc;
+  }
+
+  .UI {
+    background-color: #515e8c;
+  }
+
+  .Frontend {
+    background-color: #ffc64a;
+  }
+
+  .Backend {
+    background-color: #b460a6;
+  }
+
+  .Prototyping {
+    background-color: #ffffff;
+  }
+
+  .DesignSystems {
+    background-image: linear-gradient(45deg, #515e8c 16.67%, #ffc64a 16.67%, #ffc64a 33.33%, #b460a6 33.33%, #b460a6 50%, #515e8c 50%, #515e8c 66.67%, #ffc64a 66.67%, #ffc64a 83.33%, #b460a6 83.33%, #b460a6 100%);background-size: 84.85px 84.85px;
+  }
+
+  .Drawing {
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+  }
+
+  .Running {
+    background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+  }
+
+  .egg_section {
+    width: 100%;
+    height: 12.5%;
+  }
+
+  /*Stripes*/
+  .Backend, .Frontend, .UI, .UX, .Prototyping, .DesignSystems, .Drawing, .Running {
+    flex: 1;
+    width: 100%;
+  }
+
+  /* Mask */
+  .st0 {
+    fill:none;
+    stroke:#000000;
+    stroke-width: 1px;
+    stroke-miterlimit:10;
+  }
+
+  .cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+  }
+
+
+  .stripe {
+    top: 0;
+    left: 0;
+    opacity: var(--opacity);
+    transition: opacity .25s ease-in-out;
+  }
+
+  	div:hover > .stripe {
+      opacity: 0.5;
+    }
+
+    #thescore {
+      color: #fff;
+      font-size: 3em;
+    }
+
+    .name {
+      position: absolute;
+      z-index: 2000;
+
+      color: #fff;
+    }
+
+    #dropdown {
+      visibility: var(--visibility);
+    }
+
+    #eggcup {
+    }
+
+    #dropdownwrap {
+      background-color:#ccc;
+      border: solid 1px hotpink;
+      visibility: var(--visibility);
+    }
+
+    #countdown {
+      color: #fff;
+    }
+
+    #cover {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #000;
+    }
+
+    .key {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      display: flex;
+      flex: 0 0 auto;
+      margin-right: 1rem;
+    }
+
+    .keywrap {
+      width: 300px;
+      display: flex;
+
+      align-items: center;
+    }
+
+    p {
+      color: #fff;
+    }
+
+</style>
+
+<html>
+
+
+
+
+
+
+<svg width="0" height="0">
+  <defs>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="4" stdDeviation="2"/>
+    </filter>
+    <clipPath id="myClip">
+      <path class="st0" d="M150,122.7c0,42.6-33.6,77.1-75,77.1S0,165.3,0,122.7S33.6-0.2,75-0.2S150,80.1,150,122.7z"/></path>
+    </clipPath>
+  </defs>
+</svg>
+
+<section id="main_section">
+
+</section>
+
+
+<script>
+
+
+let eggs = {
+
+
+  "eggheads": [
+    {
+      "name": "Kevin",
+      "eggyears": 8,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Irish",
+      "office": "Oslo",
+      "powers": [
+        "UX",
+        "UI",
+        "Prototyping",
+        "Drawing",
+        "Running"
+      ]
+    },
+    {
+      "name": "Andrius",
+      "eggyears": 3,
+      "mugshot": "images/eggs/andriusgrabauskas.jpg",
+      "nationality": "Lithuanian",
+      "office": "Copenhagen",
+      "powers": [
+        "UX",
+        "UI"
+      ]
+    },
+    {
+      "name": "Billy",
+      "eggyears": 5,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Polish",
+      "office": "Trondheim",
+      "powers": [
+        "UX",
+        "UI",
+        "Running"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 7,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 1,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 2,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 9,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 5,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Sean",
+      "eggyears": 2,
+      "mugshot": "images/eggs/kevinmurphy.jpg",
+      "nationality": "Turkish",
+      "office": "Bergen",
+      "powers": [
+        "UI",
+        "Frontend",
+        "Backend",
+        "UX"
+      ]
+    },
+    {
+      "name": "Alexander",
+      "eggyears": 3,
+      "mugshot": "images/eggs/alexandervanvik.jpg",
+      "nationality": "Norwegian",
+      "office": "Stavanger",
+      "powers": [
+        "DesignSystems",
+        "UX",
+        "UI",
+        "Frontend",
+        "Backend"
+      ]
+    }]
+};
+
+
+// Grab the main section:
+
+let main_section = document.getElementById('main_section');
+let all_eggs = [];
+let all_classes = [];
+let all_names = [];
+let unique_powers = [];
+let cover_egg = "<svg version='1.1' x='0px' y='0px' viewBox='0 0 150 200' style='enable-background:new 0 0 150 200; opacity: 0.5;' xml:space='preserve'><defs><filter id='inner-glow'><feFlood flood-color='black'/><feComposite in2='SourceAlpha' operator='out'/><feGaussianBlur stdDeviation='5' result='blur'/><feComposite operator='atop' in2='SourceGraphic'/></filter></defs><path class='st0' d='M150,122.7c0,42.6-33.6,77.1-75,77.1S0,165.3,0,122.7S33.6-0.2,75-0.2S150,80.1,150,122.7z'/></svg>";
+let addegg = document.getElementById('addegg');
+
+
+
+let root = document.documentElement;
+
+
+
+// Loop through all the eggs:
+for(var i = 0; i < eggs.eggheads.length; i++){
+  let name = eggs.eggheads[i].name;
+  let eggyears = eggs.eggheads[i].eggyears;
+  let nationality = eggs.eggheads[i].nationality;
+  let office = eggs.eggheads[i].office;
+  let mugshot = eggs.eggheads[i].mugshot;
+  let powers = eggs.eggheads[i].powers;
+
+  all_names.push(name);
+  // For each egg create a div
+    let an_egg = document.createElement('div');
+  // for each div add a class:
+    an_egg.classList.add('egg');
+    an_egg.classList.add(name);
+    an_egg.classList.add(nationality);
+    an_egg.classList.add(office);
+
+  // Add name to eggs
+    //an_egg.innerHTML = "<p class='name'>" + name + "</p>";
+    an_egg.style.setProperty('background-image', "url(" + mugshot + ")");
+    an_egg.style.setProperty('background-position', 'center');
+    an_egg.style.transform = "scale("+ eggyears*0.05 + ")";
+
+  // Add all the eggs to an array
+    all_eggs.push(an_egg);
+  // Add eggs to the main sections
+    main_section.append(an_egg);
+  // Add all the classes to the classes array:
+
+    //all_classes.push(eggs.eggheads[i].powers);
+    let all_powers = eggs.eggheads[i].powers;
+    for(var k = 0; k < all_powers.length; k++){
+      unique_powers.push(all_powers[k]);
+    };
+
+
+    an_egg.innerHTML += '<div class="egg_section stripe' + ' ' + nationality + '"></div>';
+    an_egg.innerHTML += '<div class="egg_section stripe' + ' ' + office + '"></div>';
+
+    // Powers -  add them as classes
+      for(var j = 0; j < powers.length; j++){
+        // Add power balls
+        let an_egg_power = document.createElement('div');
+        an_egg.append(an_egg_power);
+        an_egg_power.classList.add(powers[j]);
+        an_egg_power.classList.add('stripe');
+      }
+
+
+      // Add a top container
+      //an_egg.innerHTML += cover_egg;
+      let an_egg_cover = document.createElement('div');
+      an_egg_cover.classList.add('cover');
+      an_egg_cover.innerHTML = cover_egg;
+      an_egg.append(an_egg_cover);
+}
+
+</script>
+
+
+</html>
